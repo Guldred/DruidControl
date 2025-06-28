@@ -1,0 +1,16 @@
+## Interface: 11200
+## Title: DruidControl
+## Notes: Some Druid Stuff
+## Author: Guldred
+## Version: 0.0.1
+## SavedVariables: DruidControlDB
+
+# Main file
+DruidControl.lua
+
+# Core
+Core\ActionbarSlotFetcher.lua
+Core\Events.lua
+
+# UI
+UI\IconDisplay.lua
