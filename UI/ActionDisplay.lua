@@ -245,18 +245,23 @@ DC.actionDisplay_ResetPositions = function()
 end
 
 local setupActionBarPositions = function()
-    actionbarSlots = DC.findSpellSlots()
+    actionbarSlots = DruidControlDB.ACTIONBAR_SPELL_SLOTS or { }
     for actionName, actionData in pairs(DC.actionDisplay.actions) do
         if actionbarSlots[actionName] then
             actionData.actionBarSlot = actionbarSlots[actionName]
         else
-            DC.printMessage("DruidControl: Action " .. actionName .. " not found in action bar slots. Please add it somewhere and reload ui!")
+            DC.printMessage("DruidControl: Actions missing in DB! Please add Nature Switfness and Swiftmend to your bars and use '/dc scan' afterwards")
+            return false
         end
     end
+    return true
 end
 
 local initialize = function()
-    setupActionBarPositions()
+    if not setupActionBarPositions() then
+        DC.printMessage("Init failed!.")
+        return
+    end
     initializeBuffPositions()
     initializeFrames()
 end

@@ -73,6 +73,9 @@ SlashCmdList["DRUIDCONTROL"] = function(msg)
         DC.unlockFrames()
     elseif command == "reset" then
         DC.actionDisplay_ResetPositions()
+        DC.trinketDisplay_ResetPositions()
+    elseif command == "scan" then
+        DruidControlDB.ACTIONBAR_SPELL_SLOTS = DC.findSpellSlots()
     else
         DC.printMessage("DruidControl Commands:")
         DC.printMessage("  /dc lock - lock frames")

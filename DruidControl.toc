@@ -2,7 +2,7 @@
 ## Title: DruidControl
 ## Notes: Some Druid Stuff
 ## Author: Guldred
-## Version: 0.0.1
+## Version: 0.0.2
 ## SavedVariables: DruidControlDB
 
 # Main file
@@ -13,4 +13,5 @@ Core\ActionbarSlotFetcher.lua
 Core\Events.lua
 
 # UI
-UI\IconDisplay.lua
+UI\ActionDisplay.lua
+UI\TrinketDisplay.lua
